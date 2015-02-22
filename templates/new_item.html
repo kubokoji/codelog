@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<title>コーデログ-アイテム登録</title>
+
+		<meta name="viewport" content="user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+
+		<link rel="stylesheet" href="/css/common.css">
+
+		<link href="css/normalize.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/slide_menu.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="css/new_item.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="js/slide_menu.js"></script>
+	</head>
+
+<body>
+
+<section>
+<div class="wh DSmenu">
+<ul>
+<li><a href="?act=mannequin">今日のコーデ</a></li>
+<li><a href="?act=home">ホーム</a></li>
+<li><a href="?act=same_place_code">場所別コーデ</a></li>
+<li><a href="?act=new_item">アイテム追加</a></li>
+<li><a href="?act=logout">ログアウト</a></li>
+</ul>
+<div class="DSbtn">
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+</div>
+</div>
+</section>
+
+<div class="head-bar">
+<div class="container-fluid">
+<h1 class="text-right" id="name_display"><?php if(isset($_SESSION['id'])) echo $_SESSION['id'] . 'さん@'; if(isset($_SESSION['city'])) echo $_SESSION['city'];?></h1>
+</div>
+</div>
+
+<div id="margin_block"></div>
+
+	<br>
+	<p id="register_message"><?php if(isset($register_message)) { echo $register_message; } ?></p>
+	<br>
+	<p id="p_register">アイテム登録</p>
+	<br>
+	<form action="?act=new_item_register" enctype="multipart/form-data" method="post" id="new_form">
+		<div id="file_choice">
+		<input type="file" id="file" name="image" style="display:none;" onchange="$('#fake_input_file').val($(this).val())">
+		<input type="button" id="file_dammy"value="ファイル選択" onClick="$('#file').click();">
+		<input id="fake_input_file" readonly type="text" value=""  onClick="$('#file').click();">
+		</div>
+		<br>
+		<div id="div_type">
+		<p id="p_type">アイテムの種類 ：</p>
+		<select id="type" name="select">
+			<option value="head">帽子 </option>
+			<option value="tops">トップス</option>
+			<option value="bottoms">ボトムス</option>
+			<option value="shoes">シューズ</option>
+		</select>
+		</div>
+		<br>
+    <input type="submit" value="登録" id="add_button"/><br><br>
+	</form>
+</body>
+
+</html>

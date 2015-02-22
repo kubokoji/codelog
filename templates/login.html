@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <link rel="apple-touch-icon" href="../images/icon.png" />
+
+		<link rel="stylesheet" style="text/css" href="css/login.css">
+
+	</head>
+	<body>
+	<br>
+	<br>
+		<div>
+			<h1 id=title>CODE.log</h1><br>
+			<p id=error_message><?php if(isset($error_message)) echo $error_message; ?></p>
+			<form action="?act=login_check" method="post" id="login_form">
+    			<table id="id_pass_table">
+        			<tr>
+			            <td class="label">ID</td>
+			            <td><input type="text" name="id"></td>
+		    	    </tr>
+		    	    <tr id="dummy_tr"></tr>
+			        <tr>
+			            <td class="label">password</td>
+			            <td><input type="password" name="password"></td>
+			        </tr>
+			    </table>
+			    <br>
+		    	<input type="submit" value="Log In"  class="button">
+			</form>
+			<br>
+			<form action="?act=new_registration" method="post" id="new_form">
+				<input type="submit" value="Sign Up" class="button"/>
+			</form>
+		</div>
+	</body>
+</html>

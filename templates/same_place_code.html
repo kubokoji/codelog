@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>コーデログ-過去の場所別コーデ</title>
+
+<meta name="viewport" content="user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+
+<link rel="stylesheet" href="/css/common.css">
+
+<link href="css/normalize.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="css/slide_menu.css" rel="stylesheet">
+
+<link href="css/same_place_code.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/same_place_code.js"></script>
+<script src="js/slide_menu.js"></script>
+
+</head>
+<body>
+
+<section>
+<div class="wh DSmenu">
+<ul>
+<li><a href="?act=mannequin">今日のコーデ</a></li>
+<li><a href="?act=home">ホーム</a></li>
+<li><a href="?act=same_place_code">場所別コーデ</a></li>
+<li><a href="?act=new_item">アイテム追加</a></li>
+<li><a href="?act=logout">ログアウト</a></li>
+</ul>
+<div class="DSbtn">
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+</div>
+</div>
+</section>
+
+<div class="head-bar">
+<div class="container-fluid">
+<h1 class="text-right" id="name_display"><?php if(isset($_SESSION['id'])) echo $_SESSION['id'] . 'さん@'; if(isset($_SESSION['city'])) echo $_SESSION['city'];?></h1>
+</div>
+</div>
+
+<div id="margin_block"></div>
+
+<br>
+<p>場所を選択してください</p>
+<br>
+	<form method="get" action="index.php">
+		<input type="hidden" name="act" value="same_place_code" />
+		<select name="place" id="place_select">
+			<option value="学校" <?php if(isset($_GET['place']) && $_GET['place'] === '学校') echo 'selected'; ?>>学校</option>
+			<option value="仕事(バイト)" <?php if(isset($_GET['place']) && $_GET['place'] === '仕事(バイト)') echo 'selected'; ?>>仕事(バイト)</option>
+			<option value="ショッピング" <?php if(isset($_GET['place']) && $_GET['place'] === 'ショッピング') echo 'selected'; ?>>ショッピング</option>
+			<option value="デート" <?php if(isset($_GET['place']) && $_GET['place'] === 'デート') echo 'selected'; ?>>デート</option>
+			<option value="アウトドア" <?php if(isset($_GET['place']) && $_GET['place'] === 'アウトドア') echo 'selected'; ?>>アウトドア</option>
+			<option value="飲み会" <?php if(isset($_GET['place']) && $_GET['place'] === '飲み会') echo 'selected'; ?>>飲み会</option>
+		</select>
+		<br>
+		<input type="submit" value="&nbsp選択した場所の過去のコーデを見る&nbsp" id="select_button">
+	</form>
+
+<br>
+<hr>
+<p id="past_code"><?php if (isset($place)) { echo '過去の' . $place . 'のコーデ一覧'; }?></p>
+<hr>
+<br>
+<?php
+if (isset($code_set))
+{
+	foreach ($code_set as $value)
+	{
+		?>
+		<p><?php echo $value['tops']['date']; ?>&nbsp;&nbsp;&nbsp;&nbsp;天気：<?php echo $value['tops']['weather']; ?></p><br>
+		<?php
+		foreach ($value as $value2)
+		{
+			?>
+			<img src="data:<?php echo $value2['mime']; ?>;base64,<?php echo base64_encode($value2['imgdat']); ?>" /><br>
+			<?php
+		}
+		?><hr><hr><br><?php
+	}
+}
+?>
+<a href=<?php if(isset($_SESSION['id'])) echo "?act=home"; else echo "?act=login"; ?> id="back_home">ホームへ戻る&nbsp;&nbsp;</a>
+</body>
+</html>

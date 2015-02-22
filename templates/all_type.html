@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<link rel="stylesheet" href="/css/tab.css">
+		<link rel="stylesheet" href="/css/all_type.css">
+
+
+	</head>
+	<body><!--iframe内にある、ユーザーの帽子またはトップスまたはボトムスまたはシューズの一覧表示画面-->
+	<?php if (isset($my_picture_info)) { foreach ($my_picture_info as $value) { ?>
+	<img src="data:<?php echo $value['mime']; ?>;base64,<?php echo base64_encode($value['imgdat']); ?>" class="pic_size" /><?php }} ?>
+	</body>
+</html>

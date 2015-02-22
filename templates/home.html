@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>コーデログ-ホーム</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+
+<link rel="stylesheet" href="/css/common.css">
+
+<link href="css/normalize.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="css/slide_menu.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/tab.css">
+
+<script src="js/home.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/slide_menu.js"></script>
+
+</head>
+<body>
+
+<section>
+<div class="wh DSmenu">
+<ul>
+<li><a href="?act=mannequin">今日のコーデ</a></li>
+<li><a href="?act=home">ホーム</a></li>
+<li><a href="?act=same_place_code">場所別コーデ</a></li>
+<li><a href="?act=new_item">アイテム追加</a></li>
+<li><a href="?act=logout">ログアウト</a></li>
+</ul>
+<div class="DSbtn">
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+</div>
+</div>
+</section>
+
+<div class="head-bar">
+<div class="container-fluid">
+<h1 class="text-right" id="name_display"><?php if(isset($_SESSION['id'])) echo $_SESSION['id'] . 'さん@'; if(isset($_SESSION['city'])) echo $_SESSION['city'];?></h1>
+</div>
+</div>
+
+<div id="margin_block"></div>
+
+<br>
+<p id="p_list"><?php if(isset($_SESSION['id'])) echo $_SESSION['id'] . 'さん'; ?>のアイテム一覧</p>
+<br>
+<br>
+<br>
+
+<div class="tabbox">
+	<p class="tabs">
+		<a href="?act=all_head" target="FRM" id="all_head" class="selected" onClick="select_change('all_head')">帽子</a>
+		<a href="?act=all_tops" target="FRM" id="all_tops" onClick="select_change('all_tops')">トップス</a>
+		<a href="?act=all_bottoms" target="FRM" id="all_bottoms" onClick="select_change('all_bottoms')">ボトムス</a>
+		<a href="?act=all_shoes" target="FRM" id="all_shoes" onClick="select_change('all_shoes')">シューズ</a>
+	</p>
+	<br>
+	<iframe src="?act=all_head" height="300" name="FRM"></iframe>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+*
+{
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+html, body
+{
+	height: 100%;
+}
+
+body
+{
+	font-family: "Dotum";
+	background-color: black;
+}
+
+#title
+{
+	font-family: "Dotum";
+	color: #999999;
+	text-align: center;
+}
+
+.button
+{
+	font-family: "Dotum";
+	width: 80%;
+	font-size: 18px;
+	height: 40px;
+	border-radius: 0.6em;
+	border-style: none;
+	background-color: lightseagreen;
+	color: whitesmoke;
+	display: block;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+input[type="text"],input[type="password"]
+{
+	background: #FFFDF4;
+	border: 2px solid #D2BA85;
+	border-radius: 5px;
+	color: black;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	text-indent: 5px;
+	vertical-align: middle;
+	width: 140px;
+}
+
+.label
+{
+	font-weight: bold;
+	font-size:20px;
+	color: #666666;
+}
+
+#error_message
+{
+	color: #FFFF33;
+	font-family: "ＭＳ ゴシック";
+	width: 80%;
+}

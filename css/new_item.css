@@ -1,0 +1,94 @@
+*
+{
+	display: block;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+#add_button{
+	width: 40%;
+	font-size: 20px;
+	height: 40px;
+	border-radius: 0.6em;
+	border-style: none;
+	background-color: lightseagreen;
+	color: whitesmoke;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+#file_dammy
+{
+	width: 40%;
+	font-size: 16px;
+	height: 30px;
+	border-radius: 0.6em;
+	border-style: none;
+	background-color: lightseagreen;
+	color: whitesmoke;
+	display: inline;
+}
+
+#fake_input_file
+{
+	background: #FFFDF4;
+	border: 2px solid #D2BA85;
+	border-radius: 5px;
+	color: black;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	text-indent: 5px;
+	vertical-align: middle;
+	width: 140px;
+	display: inline;
+}
+
+#p_type
+{
+	display: inline;
+}
+
+#type
+{
+	background: #FFFDF4;
+	border: 2px solid #D2BA85;
+	border-radius: 5px;
+	color: black;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	text-indent: 5px;
+	vertical-align: middle;
+	width: 80px;
+	display: inline;
+}
+
+#div_type
+{
+	text-align: center;
+}
+
+#p_register
+{
+	text-align: center;
+}
+
+#register_message
+{
+	color: DodgerBlue;
+	text-align: center;
+}
+
+#file_choice
+{
+	text-align: center;
+}
+
+#margin_block
+{
+	height:50px;
+	width:100%;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>コーデログ-ホーム</title>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+
+	<link rel="stylesheet" href="/css/common.css">
+
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/slide_menu.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="/css/item_list.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/slide_menu.js"></script>
+
+</head>
+<body>
+
+<section>
+<div class="wh DSmenu">
+<ul>
+<li><a href="?act=mannequin">今日のコーデ</a></li>
+<li><a href="?act=home">ホーム</a></li>
+<li><a href="?act=same_place_code">場所別コーデ</a></li>
+<li><a href="?act=new_item">アイテム追加</a></li>
+<li><a href="?act=logout">ログアウト</a></li>
+</ul>
+<div class="DSbtn">
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+</div>
+</div>
+</section>
+
+<div class="head-bar">
+<div class="container-fluid">
+<h1 class="text-right" id="name_display"><?php if(isset($_SESSION['id'])) echo $_SESSION['id'] . 'さん@'; if(isset($_SESSION['city'])) echo $_SESSION['city'];?></h1>
+</div>
+</div>
+
+<div id="margin_block"></div>
+<div class="center"><p id="title"><?php echo $part; ?>一覧</p></div>
+
+<hr><p class="explanation">３日以内に使った<?php echo $part; ?></p><hr><!--ここは取得した日を元に、書き換える。-->
+<?php if (isset($within_three_days)) { foreach ($within_three_days as $value) { ?>
+<a href="?act=mannequin&item_type=<?php echo $value['item_type']; ?>&item_id=<?php echo $value['item_id']; ?>&id=<?php echo $value['id']; ?>">
+<img class="pic" src="data:<?php echo $value['mime']; ?>;base64,<?php echo base64_encode($value['imgdat']); ?>">
+</a><?php }} ?>
+<br>
+<br>
+
+<hr><p class="explanation">同じ気候で前に使った<?php echo $part; ?></p><hr>
+<?php if (isset($similar_weather)) { foreach ($similar_weather as $value) { ?>
+<a href="?act=mannequin&item_type=<?php echo $value['item_type']; ?>&item_id=<?php echo $value['item_id']; ?>&id=<?php echo $value['id']; ?>">
+<img class="pic" src="data:<?php echo $value['mime']; ?>;base64,<?php echo base64_encode($value['imgdat']); ?>">
+</a><?php }} ?>
+<br>
+<br>
+
+<hr><p class="explanation">自分の全ての<?php echo $part; ?></p><hr>
+<?php if (isset($all_picture_info)) { foreach ($all_picture_info as $value) { ?>
+<a href="?act=mannequin&item_type=<?php echo $value['item_type']; ?>&item_id=<?php echo $value['item_id']; ?>&id=<?php echo $_SESSION['id']; ?>">
+<img class="pic" src="data:<?php echo $value['mime']; ?>;base64,<?php echo base64_encode($value['imgdat']); ?>">
+</a><?php }} ?>
+<br>
+<br>
+
+<hr><p class="explanation">他ユーザーの全ての<?php echo $part; ?></p><hr>
+<?php if (isset($others_picture_info)) { foreach ($others_picture_info as $value) { ?>
+<a href="?act=mannequin&item_type=<?php echo $value['item_type']; ?>&item_id=<?php echo $value['item_id']; ?>&id=<?php echo $value['id']; ?>">
+<img class="pic" src="data:<?php echo $value['mime']; ?>;base64,<?php echo base64_encode($value['imgdat']); ?>">
+</a><?php }} ?>
+<br>
+<br>
+
+<a href="?act=mannequin" id="back_code">今日のコーデに戻る</a>
+<a href="?act=mannequin&item_type=<?php echo $type ?>&item_id=no_item_id" id="back_nothing">何も選択せずに戻る</a>
+</body>
+</html>

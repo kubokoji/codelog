@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>コーデログ-コーデ決定結果</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+
+<link rel="stylesheet" href="/css/common.css">
+
+<link href="css/normalize.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="css/slide_menu.css" rel="stylesheet">
+
+<link href="css/decide_code.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/slide_menu.js"></script>
+
+<script>
+	//今のselectedクラス
+	var selected_id="all_head";
+</script>
+
+</head>
+<body>
+
+<section>
+<div class="wh DSmenu">
+<ul>
+<li><a href="?act=mannequin">今日のコーデ</a></li>
+<li><a href="?act=home">ホーム</a></li>
+<li><a href="?act=same_place_code">場所別コーデ</a></li>
+<li><a href="?act=new_item">アイテム追加</a></li>
+<li><a href="?act=logout">ログアウト</a></li>
+</ul>
+<div class="DSbtn">
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+</div>
+</div>
+</section>
+
+<div class="head-bar">
+<div class="container-fluid">
+<h1 class="text-right" id="name_display"><?php if(isset($_SESSION['id'])) echo $_SESSION['id'] . 'さん@'; if(isset($_SESSION['city'])) echo $_SESSION['city'];?></h1>
+</div>
+</div>
+
+<div id="margin_block"></div>
+<br>
+<p id="error_message"><?php if(isset($error_message)) echo $error_message; ?></p>
+<p id="message"><?php if(isset($message)) echo $message; ?></p>

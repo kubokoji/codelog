@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<script>
+
+		</script>
+		<meta name="viewport" content="user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+
+		<link rel="stylesheet" href="css/common.css">
+
+		<link href="css/normalize.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/slide_menu.css" rel="stylesheet">
+
+		<link href="css/mannequin.css" rel="stylesheet">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="js/slide_menu.js"></script>
+
+	</head>
+	<body>
+
+<section>
+<div class="wh DSmenu">
+<ul>
+<li><a href="?act=mannequin">今日のコーデ</a></li>
+<li><a href="?act=home">ホーム</a></li>
+<li><a href="?act=same_place_code">場所別コーデ</a></li>
+<li><a href="?act=new_item">アイテム追加</a></li>
+<li><a href="?act=logout">ログアウト</a></li>
+</ul>
+<div class="DSbtn">
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+<div class="hambarg"></div>
+</div>
+</div>
+</section>
+
+<div class="head-bar">
+<div class="container-fluid">
+<h1 class="text-right" id="name_display"><?php if(isset($_SESSION['id'])) echo $_SESSION['id'] . 'さん@'; if(isset($_SESSION['city'])) echo $_SESSION['city'];?></h1>
+</div>
+</div>
+
+<div id="margin_block"></div>
+
+<br>
+<p>現在の天気 : <?php echo $_SESSION['weather_in_japanese']; ?></p>
+<p>現在の気温 : <?php echo $_SESSION['temperature']; ?>℃</p>
+
+<br>
+<br>
+
+<a href="?act=head_list">
+<img id="head" src="<?php if (isset($_SESSION['head'])) { ?>data:<?php echo $head['mime']; ?>;base64,<?php echo base64_encode($head['imgdat']); } ?>" alt="帽子を選択"></a>
+<br>
+
+<a href="?act=tops_list">
+<img  id="tops" src="<?php if (isset($_SESSION['tops'])) { ?>data:<?php echo $tops['mime']; ?>;base64,<?php echo base64_encode($tops['imgdat']); } ?>" alt="トップスを選択"></a>
+<br>
+
+<a href="?act=bottoms_list">
+<img id="bottoms" src="<?php if (isset($_SESSION['bottoms'])) { ?>data:<?php echo $bottoms['mime']; ?>;base64,<?php echo base64_encode($bottoms['imgdat']); } ?>" alt="ボトムスを選択"></a>
+<br>
+
+<a href="?act=shoes_list">
+<img id="shoes" src="<?php if (isset($_SESSION['shoes'])) { ?>data:<?php echo $shoes['mime']; ?>;base64,<?php echo base64_encode($shoes['imgdat']); } ?>" alt="シューズを選択"></a>
+<br>
+
+<p id="ikisaki">行き先は？</p>
+<br>
+<form method="get" action="index.php">
+	<input type="hidden" name="act" value="decide_code">
+	<span id="select_decide">
+	<select name="place" id="select_p">
+		<option value="学校">学校</option>
+		<option value="仕事(バイト)">仕事(バイト)</option>
+		<option value="ショッピング">ショッピング</option>
+		<option value="デート">デート</option>
+		<option value="アウトドア">アウトドア</option>
+		<option value="飲み会">飲み会</option>
+	</select>
+	<input type="submit" value="コーデ決定" id="kettei">
+	</span>
+</form>
+<br>
+</body>
+</html>

@@ -1,0 +1,17 @@
+#error_message
+{
+	color: red;
+	text-align: right;
+}
+
+#message
+{
+	color: DodgerBlue;
+	text-align: center;
+}
+
+#margin_block
+{
+	height:50px;
+	width:100%;
+}

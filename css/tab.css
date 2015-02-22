@@ -1,0 +1,60 @@
+.tabbox
+{
+	width:85%;
+}
+
+
+iframe
+{
+	display: block;
+	margin: 0 auto;
+	padding: 0 auto;
+	width:100%;
+	z-index:1;
+	frameborder="0";
+	border: none;
+}
+
+.selected
+{
+	border-bottom-style: none;
+	z-index: 2;
+	height: 27px;
+}
+
+p.tabs
+{
+	margin-top: -1em;
+	z-index:3;
+}
+
+p.tabs a
+{
+	border-top-right-radius: 1em;
+	border-top-left-radius: 1em;
+	display: block;
+	width:  25%;
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	text-align: center;
+	background-color: whitesmoke;
+	border-width: 2px;
+	background-color: DodgerBlue;
+	color: whitesmoke;
+	text-decoration: blink;
+	border: 3px solid;
+	border-color:DodgerBlue;
+	text-decoration: none;
+	border-bottom-style:none;
+	font-size: 16px;
+}
+
+p.tabs a.selected
+{
+	color: DodgerBlue;
+	background-color:white;
+	z-index:1;
+	border-color:white;
+
+}

@@ -1,0 +1,83 @@
+*
+{
+	display: block;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+#ikisaki{
+	text-align: center;
+}
+
+#kettei{
+	width: 30%;
+	font-size: 14px;
+	height: 32px;
+	border-radius: 0.6em;
+	border-style: none;
+	background-color: lightseagreen;
+	color: whitesmoke;
+	display:inline;
+}
+
+#select_p
+{
+	background: #FFFDF4;
+	border: 2px solid #D2BA85;
+	border-radius: 5px;
+	color: black;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	text-indent: 5px;
+	vertical-align: middle;
+	width: 140px;
+	display: inline;
+}
+
+#head
+{
+	width: 40%;
+	height: 80px;
+}
+
+#tops
+{
+	margin: 0 auto;
+	width: 40%;
+	height: 120px;
+}
+
+#bottoms
+{
+	width: 40%;
+	height: 180px;
+}
+
+#shoes
+{
+	width: 40%;
+	height: 80px;
+}
+
+#select_decide
+{
+	text-align : center;
+}
+
+p
+{
+	text-align: center;
+}
+
+form
+{
+	display: inline;
+}
+
+#margin_block
+{
+	height:50px;
+	width:100%;
+}

@@ -1,0 +1,98 @@
+body
+{
+	font-family: "Dotum";
+	background-color: black;
+}
+
+#error
+{
+	color: #FFFF33;
+	font-size:20px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#success
+{
+	color:lightseagreen;
+	font-size:20px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.label
+{
+	font-family: "Dotum";
+	font-weight: bold;
+	font-size:20px;
+	color: #666666;
+}
+
+#new_registration_table
+{
+	margin: 0 auto;
+	padding: 0 auto;
+	height: 100px;
+}
+
+#new_form
+{
+	display: inline;
+}
+
+#add_button
+{
+	width: 80%;
+	font-size: 18px;
+	height: 40px;
+	border-radius: 0.6em;
+	border-style: none;
+	background-color: lightseagreen;
+	color: whitesmoke;
+	display: block;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+#welcome
+{
+	font-family: "Dotum";
+	color: #666666;
+	text-align: center;
+	font-size:24px;
+}
+
+#back_to_login
+{
+	font-size: 16px;
+}
+
+#city_select
+{
+	background: #FFFDF4;
+	border: 2px solid #D2BA85;
+	border-radius: 5px;
+	color: black;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	text-indent: 5px;
+	vertical-align: middle;
+	width: 140px;
+}
+
+.id_pass_box
+{
+	background: #FFFDF4;
+	border: 2px solid #D2BA85;
+	border-radius: 5px;
+	color: black;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	text-indent: 5px;
+	vertical-align: middle;
+	width: 140px;
+}
